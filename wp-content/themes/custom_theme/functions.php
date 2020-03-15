@@ -68,6 +68,13 @@ function custom_siderbar(){
 }
 add_action( 'widgets_init', 'custom_siderbar' );
 
+//post thumbnail 
+add_theme_support( 'post-thumbnails' );
+//for custom logo
+add_theme_support( 'custom-logo' );
+
+//for custom header
+add_theme_support( 'custom-header' );
 
 
 ?>

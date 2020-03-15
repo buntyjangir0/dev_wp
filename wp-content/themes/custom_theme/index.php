@@ -1,6 +1,6 @@
 <?php get_header(); ?>
     <div id="site_content">
-      <div id="banner"></div>
+      <div id="banner"><img alt="" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>"></div>
 	  <?php get_sidebar(); ?>
       <div id="content">
         
@@ -10,7 +10,9 @@
       if(have_posts()){
             while(have_posts()){
               the_post();
-             the_title('<h1>', '</h1>');
+              the_title('<h1>', '</h1>');
+              the_post_thumbnail(array( 100, 100 ));
+             
              the_content();
             }
       } else {
