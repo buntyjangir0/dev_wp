@@ -3,7 +3,7 @@
       <div id="banner"><img alt="" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>"></div>
 	  <?php get_sidebar(); ?>
       <div id="content">
-        index file
+        front page file
   <?php
 
   
