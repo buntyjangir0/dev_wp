@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div id="site_content">
       <div id="banner"><img alt="" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>"></div>
-	  <?php //get_sidebar(); ?>
+	  <?php get_sidebar(); ?>
       <div id="content">
         single file
   <?php
@@ -15,6 +15,16 @@
             // the_excerpt();
              
              the_content();
+
+  
+
+  // If comments are open or we have at least one comment, load up the comment template.
+ if ( comments_open() || get_comments_number() ) :
+     comments_template();
+ endif;
+            
+
+
             }
       } else {
         echo "no content";
