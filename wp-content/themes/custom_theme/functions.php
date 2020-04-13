@@ -131,4 +131,28 @@ function custom_book_posttype() {
  
 add_action( 'init', 'custom_book_posttype' );
 
-?>
+
+//rest api test
+
+function custom_rest_api(){
+    register_rest_route('custom/v1','myapi', array(
+        'methods' => 'POST',
+        'callback' => 'custom_api_callback_function'
+    ));
+}
+
+add_action('rest_api_init', 'custom_rest_api');
+
+
+function custom_api_callback_function(){
+
+    global $wpdb;
+    $data = json_encode($_REQUEST);
+    $post = $wpdb->insert('wptuts_test', array(
+        'submit_data' => $data
+    ));
+   return rest_ensure_response($_REQUEST);
+   // echo "kamlesh jangir";
+}
+
+
